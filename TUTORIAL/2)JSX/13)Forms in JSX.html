@@ -1,0 +1,41 @@
+
+
+<html>
+    <head>
+        <title>JSX EXPRESSION</title>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src = "https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            var state={value:''}; //variable to forms values
+
+            function handleChange(event){
+                state={value: event.target.value};
+            }
+            function handleSubmit(event){
+                alert('A name was submitted: '+ state.value);
+                event.preventDefault();
+            }
+
+            const Form=()=>{
+                return(
+                    <form onSubmit={handleSubmit}>
+                        <label>
+                            name:
+                            <input type="text" value={state.value} onChange={handleChange} />
+                        </label>
+                        <input type="submit" value="Submit" />
+                    </form>
+                )
+            }
+
+
+       
+        ReactDOM.createRoot(document.getElementById("root")).render(<Form/>);
+        </script>
+    </body>
+</html>
