@@ -1,0 +1,34 @@
+
+<html>
+    <head>
+        <title>JSX EXPRESSION</title>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src = "https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+
+    <body>
+        <div id="root"></div>
+        
+        <script type="text/babel">
+                       
+            const App = () => {
+                const email = "demo@codingninjas.com";
+                const password = "demo";
+                if (email == "demo@codingninjas.com") {
+                    if (password == "demo") {
+                        return <h1>User is an employee.</h1>;
+                    }
+                    else {
+                        return <h1>Incorrect password</h1>;
+                    }
+                }
+                else {
+                    return <h1>User is a student.</h1>;
+                }
+            }
+
+            ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+        </script>
+    </body>
+</html>
