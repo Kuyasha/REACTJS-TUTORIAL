@@ -1,0 +1,48 @@
+
+<html>
+    <head>
+        <title>JSX EXPRESSION</title>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src = "https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+
+/*                     
+            function addOne(){
+                score += 1;
+            }
+            function addScore(num){
+                score += num;
+            }
+            //In HTML
+            <button onclick="addOne()">1</button>                               
+            //In JSX 
+            <button onClick={addOne}>1</button>
+            <button onClick={()=>addScore(2)}>2</button> //use inline fn to pass arguments
+
+            ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+*/
+            var state={
+                isToggleOn : true
+            }
+            function handleClick(){
+                state.isToggleOn = !state.isToggleOn;
+                console.log('OFF');
+            }
+
+            function Toggle(){
+                return(
+                    <>
+                    <button onClick={handleClick}>{state.isToggleOn ? 'ON' : 'OFF'}</button>
+                    </>
+                )
+            }
+            
+            ReactDOM.createRoot(document.getElementById("root")).render(<Toggle/>);
+        </script>
+    </body>
+</html>
