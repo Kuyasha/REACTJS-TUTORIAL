@@ -1,0 +1,121 @@
+
+<html>
+    <head>
+        <title>JSX EXPRESSION</title>
+        <link rel="stylesheet" href="7)Car table.css">
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src = "https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+           //CARS TABLE
+            function CarsDetails(){
+                let cars=[
+                    {
+                     name:"BMW",
+                     average:10,
+                     img:"https://cdn-icons-png.flaticon.com/128/741/741407.png"
+                    },
+                    {
+                     name:"Audi",
+                     average:12,
+                     img:"https://cdn-icons-png.flaticon.com/128/741/741407.png"
+                    },
+                    {
+                     name:"Nexa",
+                     average:18,
+                     img:"https://cdn-icons-png.flaticon.com/128/741/741407.png"
+                    },
+                ];
+
+                return(
+                    <>
+                    <h1>Cars Details</h1>
+                    <table className="tab">
+                        <thead>
+                          <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Average</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                         {cars.map((car,index) => (
+                            <tr key={index}>
+                                <td> <img src={car.img} height="20"/> </td>
+                                <td>{car.name}</td>
+                                <td>{car.average}</td>
+                            </tr>   
+                         ))}
+                        </tbody>
+                    </table>
+                    </>
+                )
+            }
+
+
+            //STUDENT TABLE
+            function StudentDetails(){
+                let students=[
+                    {
+                     name:"Alexa",
+                     age:10,
+                     marks:35
+                    },
+                    {
+                     name:"Siri",
+                     age:12,
+                     marks:40
+                    },
+                    {
+                     name:"Google",
+                     age:13,
+                     marks:41
+                    },
+                ];
+
+                return(
+                    <>
+                    <h1>Student Details</h1>
+                    <table>
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Marks</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                         {students.map((student,index) => (
+                            <tr key={index}>
+                                <td>{student.name}</td>
+                                <td>{student.age}</td>
+                                <td>{student.marks}</td>
+                            </tr>   
+                         ))}
+                        </tbody>
+                    </table>
+                    </>
+                )
+            }
+            
+            
+            function App(){
+                return(
+                    <>
+                     <CarsDetails/>
+                     <StudentDetails/>
+                    </>
+                )    
+            }
+
+            const rootElement=ReactDOM.createRoot(document.getElementById("root"));
+            rootElement.render(<App/>);
+        </script>
+    </body>
+</html>
